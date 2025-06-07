@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Layer - Taxi Demand Forecasting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--card-shadow);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            background: white;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .model-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .model-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .model-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .model-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-taxi me-2"></i>
+                Taxi Demand Forecasting
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/report.md">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/visualizations">Visualizations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Model Layer</li>
+            </ol>
+        </nav>
+
+        <h2 class="section-title">Model Architecture</h2>
+        
+        <div class="model-grid">
+            <div class="model-card">
+                <i class="fas fa-network-wired model-icon"></i>
+                <div class="model-title">Spatiotemporal Model</div>
+                <div class="model-description">
+                    <p>Deep learning model for taxi demand forecasting</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fas fa-check text-success me-2"></i>CNN for spatial features</li>
+                        <li><i class="fas fa-check text-success me-2"></i>LSTM for temporal patterns</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Attention mechanism</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <i class="fas fa-chart-line model-icon"></i>
+                <div class="model-title">Performance Metrics</div>
+                <div class="model-description">
+                    <p>Model evaluation results</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fas fa-chart-bar text-primary me-2"></i>MAPE: 12.3%</li>
+                        <li><i class="fas fa-chart-bar text-primary me-2"></i>RMSE: 8.7</li>
+                        <li><i class="fas fa-chart-bar text-primary me-2"></i>R²: 0.89</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <i class="fas fa-cogs model-icon"></i>
+                <div class="model-title">Training Process</div>
+                <div class="model-description">
+                    <p>Model training details</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fas fa-clock text-primary me-2"></i>Epochs: 100</li>
+                        <li><i class="fas fa-memory text-primary me-2"></i>Batch Size: 32</li>
+                        <li><i class="fas fa-graduation-cap text-primary me-2"></i>Learning Rate: 0.001</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0">Model Components</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Architecture Details</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-layer-group text-primary me-2"></i>Input Layer: 24x24x24</li>
+                            <li><i class="fas fa-layer-group text-primary me-2"></i>CNN Layers: 3</li>
+                            <li><i class="fas fa-layer-group text-primary me-2"></i>LSTM Layers: 2</li>
+                            <li><i class="fas fa-layer-group text-primary me-2"></i>Output Layer: 24x24x1</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Features</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-clock text-primary me-2"></i>Temporal Features</li>
+                            <li><i class="fas fa-map text-primary me-2"></i>Spatial Features</li>
+                            <li><i class="fas fa-cloud text-primary me-2"></i>Weather Data</li>
+                            <li><i class="fas fa-calendar text-primary me-2"></i>Holiday Information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About</h5>
+                    <p>This project analyzes taxi demand patterns in NYC using deep learning techniques.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/dashboard.html" class="text-white">Dashboard</a></li>
+                        <li><a href="/report.md" class="text-white">Report</a></li>
+                        <li><a href="/visualizations" class="text-white">Visualizations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

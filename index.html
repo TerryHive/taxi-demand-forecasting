@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Demand Forecasting Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--card-shadow);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            background: white;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .project-stats {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .stat-label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-taxi me-2"></i>
+                Taxi Demand Forecasting
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/report.md">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/visualizations">Visualizations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Taxi Demand Forecasting</h1>
+            <p class="hero-subtitle">A Spatiotemporal Study in NYC using Deep Learning</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="project-stats">
+            <div class="row">
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">100M+</div>
+                    <div class="stat-label">Taxi Trips</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">24x24</div>
+                    <div class="stat-label">Grid Size</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">12.3%</div>
+                    <div class="stat-label">MAPE</div>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <div class="stat-number">0.89</div>
+                    <div class="stat-label">R² Score</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Project Components</h2>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Dashboard</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h5>Interactive Dashboard</h5>
+                        <p>Explore visualizations and insights about taxi demand patterns in NYC.</p>
+                        <a href="/dashboard.html" class="btn btn-primary">View Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Visualizations</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt feature-icon"></i>
+                        <h5>Data Visualizations</h5>
+                        <p>Interactive maps, time series plots, and demand heatmaps.</p>
+                        <a href="/visualizations" class="btn btn-primary">View Visualizations</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Model</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h5>Deep Learning Model</h5>
+                        <p>Explore the spatiotemporal model architecture and performance.</p>
+                        <a href="/model_layer" class="btn btn-primary">View Model</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Data</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>Dataset Overview</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-calendar-alt text-primary me-2"></i>Time Period: 2016-2017</li>
+                            <li><i class="fas fa-map-marker-alt text-primary me-2"></i>Location: New York City</li>
+                            <li><i class="fas fa-taxi text-primary me-2"></i>Total Trips: ~100M</li>
+                            <li><i class="fas fa-th text-primary me-2"></i>Grid Size: 1km x 1km</li>
+                        </ul>
+                        <a href="/data" class="btn btn-primary">Explore Data</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Documentation</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>Project Resources</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-file-alt text-primary me-2"></i>Technical Report</li>
+                            <li><i class="fas fa-code text-primary me-2"></i>Source Code</li>
+                            <li><i class="fas fa-book text-primary me-2"></i>API Documentation</li>
+                            <li><i class="fas fa-database text-primary me-2"></i>Dataset Documentation</li>
+                        </ul>
+                        <a href="/report.md" class="btn btn-primary">View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About</h5>
+                    <p>This project analyzes taxi demand patterns in NYC using deep learning techniques.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/dashboard.html" class="text-white">Dashboard</a></li>
+                        <li><a href="/report.md" class="text-white">Report</a></li>
+                        <li><a href="/visualizations" class="text-white">Visualizations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
