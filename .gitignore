@@ -54,4 +54,7 @@ logs/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Large files
+ffmpeg.zip 
