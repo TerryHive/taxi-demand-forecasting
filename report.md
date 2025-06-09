@@ -480,21 +480,27 @@ The analysis revealed several key patterns through various visualizations. All v
      * 0.72 clustering coefficient
      * 500m influence radius
      * 30-40% demand increase near hubs
-   - External factor impacts
-     * 15-20% event impact
-     * 0.3-0.4 weather correlation
-     * 25% holiday season effect
 
-### 8.2 Recommendations
-1. Technical Improvements:
+### 8.2 Future Work
+1. External Factors Integration:
+   - Weather data analysis
+     * Integration of hourly weather records
+     * Impact analysis of precipitation and temperature
+     * Correlation studies with demand patterns
+   - Holiday and Event Analysis
+     * Integration of holiday calendar data
+     * Analysis of special events impact
+     * Seasonal pattern correlation
+   - Additional Features
+     * Public transportation schedules
+     * Major event calendars
+     * Traffic condition data
+
+2. Technical Improvements:
    - Implement real-time prediction
      * 5-minute update intervals
      * Streaming data processing
      * Online learning capability
-   - Add weather data integration
-     * Hourly weather updates
-     * Precipitation impact modeling
-     * Temperature correlation
    - Enhance low-demand area modeling
      * Hierarchical approach
      * Ensemble methods
@@ -503,24 +509,6 @@ The analysis revealed several key patterns through various visualizations. All v
      * Dynamic grid adjustment
      * Multi-scale analysis
      * Adaptive resolution
-
-2. Practical Applications:
-   - Dynamic pricing implementation
-     * 15-20% price adjustment
-     * Real-time optimization
-     * Demand-based scaling
-   - Resource allocation optimization
-     * 30% efficiency improvement
-     * 25% reduction in idle time
-     * 20% increase in utilization
-   - Service quality improvement
-     * 15% reduction in wait time
-     * 20% increase in availability
-     * 25% better coverage
-   - Urban planning integration
-     * Traffic flow optimization
-     * Infrastructure planning
-     * Policy development
 
 ## 9. Conclusion
 The grid-based deep learning approach has demonstrated significant success in predicting taxi demand across NYC. The model achieves an average MAE of 2.3 pickups per grid cell and a MAPE of 15.7% in high-traffic areas, showing strong potential for practical applications. The research provides valuable insights for urban transportation planning and demonstrates the effectiveness of deep learning in transportation analytics.
