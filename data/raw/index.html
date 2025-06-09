@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Data - Taxi Demand Forecasting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--card-shadow);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            background: white;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1rem;
+        }
+
+        .data-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .data-table th, .data-table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-taxi me-2"></i>
+                Taxi Demand Forecasting
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="section-title">Raw Data Information</h2>
+
+        <div class="data-info">
+            <h4>About the Raw Data</h4>
+            <p>The raw data consists of NYC Yellow Taxi trip records from January 2015. This data is the foundation of our taxi demand forecasting project.</p>
+            
+            <h5 class="mt-4">Data Source</h5>
+            <p>The original data can be downloaded from the NYC Taxi & Limousine Commission (TLC) website:</p>
+            <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" class="btn btn-primary" target="_blank">
+                <i class="fas fa-download me-2"></i>Download from TLC
+            </a>
+
+            <h5 class="mt-4">Data Structure</h5>
+            <p>The raw data file (yellow_tripdata_2015-01.csv) contains the following columns:</p>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Description</th>
+                            <th>Data Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>pickup_datetime</td>
+                            <td>Date and time when the passenger was picked up</td>
+                            <td>datetime</td>
+                        </tr>
+                        <tr>
+                            <td>dropoff_datetime</td>
+                            <td>Date and time when the passenger was dropped off</td>
+                            <td>datetime</td>
+                        </tr>
+                        <tr>
+                            <td>pickup_longitude</td>
+                            <td>Longitude coordinate of pickup location</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>pickup_latitude</td>
+                            <td>Latitude coordinate of pickup location</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>dropoff_longitude</td>
+                            <td>Longitude coordinate of dropoff location</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>dropoff_latitude</td>
+                            <td>Latitude coordinate of dropoff location</td>
+                            <td>float</td>
+                        </tr>
+                        <tr>
+                            <td>passenger_count</td>
+                            <td>Number of passengers in the vehicle</td>
+                            <td>integer</td>
+                        </tr>
+                        <tr>
+                            <td>trip_distance</td>
+                            <td>Distance of the trip in miles</td>
+                            <td>float</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5 class="mt-4">Data Processing</h5>
+            <p>This raw data is processed in the following steps:</p>
+            <ol>
+                <li>Data cleaning and validation</li>
+                <li>Conversion to grid-based format</li>
+                <li>Feature engineering</li>
+                <li>Preparation for model training</li>
+            </ol>
+
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Note:</strong> The raw data file is large (1.8GB) and is not included in the GitHub repository. Please download it from the TLC website.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

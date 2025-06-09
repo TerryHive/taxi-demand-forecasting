@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Input Data - Taxi Demand Forecasting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--card-shadow);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .data-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .data-table th, .data-table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-taxi me-2"></i>
+                Taxi Demand Forecasting
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="section-title">Model Input Data Information</h2>
+
+        <div class="data-info">
+            <h4>About the Model Input Data</h4>
+            <p>The model input data consists of the final processed datasets that are ready for model training. These datasets have been transformed into the specific format required by our deep learning model.</p>
+            
+            <h5 class="mt-4">Training Data Structure</h5>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Dataset Name</th>
+                            <th>Description</th>
+                            <th>Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X_train.npy</td>
+                            <td>Training features (24x24x24 grid, hourly data)</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                        <tr>
+                            <td>y_train.npy</td>
+                            <td>Training labels (24x24x1 grid, next hour demand)</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                        <tr>
+                            <td>X_val.npy</td>
+                            <td>Validation features</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                        <tr>
+                            <td>y_val.npy</td>
+                            <td>Validation labels</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                        <tr>
+                            <td>X_test.npy</td>
+                            <td>Test features</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                        <tr>
+                            <td>y_test.npy</td>
+                            <td>Test labels</td>
+                            <td>NumPy Array</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5 class="mt-4">Feature Engineering</h5>
+            <p>The following features have been engineered for the model:</p>
+            <ul>
+                <li><strong>Temporal Features:</strong>
+                    <ul>
+                        <li>Hour of day (0-23)</li>
+                        <li>Day of week (0-6)</li>
+                        <li>Month (1-12)</li>
+                        <li>Holiday indicators</li>
+                    </ul>
+                </li>
+                <li><strong>Spatial Features:</strong>
+                    <ul>
+                        <li>Grid cell coordinates</li>
+                        <li>Neighborhood information</li>
+                        <li>POI (Points of Interest) density</li>
+                    </ul>
+                </li>
+                <li><strong>Weather Features:</strong>
+                    <ul>
+                        <li>Temperature</li>
+                        <li>Precipitation</li>
+                        <li>Wind speed</li>
+                        <li>Weather conditions</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5 class="mt-4">Data Splits</h5>
+            <ul>
+                <li>Training set: 70% of the data</li>
+                <li>Validation set: 15% of the data</li>
+                <li>Test set: 15% of the data</li>
+            </ul>
+
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Note:</strong> These datasets are in the final format required by the deep learning model and are used for training, validation, and testing.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
