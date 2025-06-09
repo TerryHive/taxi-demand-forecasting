@@ -2,11 +2,12 @@
 
 ## Cover Page
 - **Report Title:** Transportation Data Analysis and Visualization: Applications of GitHub Projects
-- **Student Name:** [Your Name]
-- **Student ID:** [Your ID]
-- **Program/Department:** [Your Department]
-- **Supervisor:** [Supervisor's Name]
-- **Submission Date:** [Date]
+- **Student Name:** Lefteris Verouchis
+- **Student ID:** D1396909
+- **Github repository:** https://github.com/TerryHive/taxi-demand-forecasting
+- **Web page:** https://terryhive.github.io/taxi-demand-forecasting/
+
+
 
 ## Table of Contents
 1. Abstract
